@@ -1,0 +1,6 @@
+<div class="container">
+  <app-logo-card *ngFor="let logo of logos" [logo]="logo" (deleted)="loadLogos()"></app-logo-card>
+  <button mat-mini-fab color="primary" class="floating-button" routerLink="/logos/new">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,54 @@
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+  }
+}
+
+.left-side {
+  max-width: 450px;
+  width: 100%;
+}
+
+.right-side {
+  padding: 15px;
+  max-width: 600px;
+  width: 100%;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#canvas {
+  border: 1px solid black;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+mat-radio-button {
+  display: block;
+  margin-left: 10px;
+}
+
+.text-conf {
+  margin-top: 10px;
+}
+
+.mat-input {
+  width: 100%;
+}
+
+.button-block {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+
+  & button:first-child {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="left-side">
+    <canvas id="canvas" #canvas width="400" height="300"></canvas>
+  </div>
+
+  <div class="right-side">
+    <form [formGroup]="logoForm" (ngSubmit)="saveLogo()">
+      <section formGroupName="figure" class="figure-conf">
+        <label class="example-margin">Type of figure: </label>
+        <mat-radio-group formControlName="type">
+          <mat-radio-button class="example-margin" value="triangle">Triangle</mat-radio-button>
+          <mat-radio-button class="example-margin" value="square">Square</mat-radio-button>
+          <mat-radio-button class="example-margin" value="circle">Circle</mat-radio-button>
+        </mat-radio-group>
+        <ngx-material-colorpicker formControlName="color" placeholder="Figure color"></ngx-material-colorpicker>
+      </section>
+      <section formGroupName="text" class="text-conf">
+        <mat-form-field class="mat-input">
+          <input matInput placeholder="Text" formControlName="text">
+        </mat-form-field>
+        <mat-form-field class="mat-input">
+          <input matInput placeholder="Font style" formControlName="font">
+        </mat-form-field>
+        <mat-form-field class="mat-input">
+          <input matInput placeholder="Font size" formControlName="size">
+        </mat-form-field>
+        <ngx-material-colorpicker formControlName="color" placeholder="Text color"></ngx-material-colorpicker>
+      </section>
+      <div class="button-block">
+        <button mat-raised-button color="primary" type="submit">Save</button>
+        <button mat-raised-button color="warn" routerLink="logos">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
