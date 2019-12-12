@@ -5,7 +5,7 @@ import {
   MatDividerModule,
   MatFormFieldModule,
   MatIconModule,
-  MatRadioModule,
+  MatRadioModule, MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -16,7 +16,8 @@ const modules = [
   MatFormFieldModule,
   MatToolbarModule,
   MatButtonModule,
-  MatIconModule
+  MatIconModule,
+  MatSelectModule
 ];
 
 @NgModule({

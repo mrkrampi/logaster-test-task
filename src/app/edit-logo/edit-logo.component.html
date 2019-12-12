@@ -18,8 +18,13 @@
         <mat-form-field class="mat-input">
           <input matInput placeholder="Text" formControlName="text">
         </mat-form-field>
-        <mat-form-field class="mat-input">
-          <input matInput placeholder="Font style" formControlName="font">
+        <mat-form-field>
+          <mat-label>Font</mat-label>
+          <mat-select formControlName="font">
+            <mat-option *ngFor="let food of fonts" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <mat-form-field class="mat-input">
           <input matInput placeholder="Font size" formControlName="size">

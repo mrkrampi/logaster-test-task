@@ -18,6 +18,15 @@ export class EditLogoComponent implements AfterViewInit {
   private logoForm: FormGroup;
   private logo: LogoModel;
 
+  fonts = [
+    {value: 'Lobster', viewValue: 'Lobster'},
+    {value: 'Anton', viewValue: 'Anton'},
+    {value: 'Source Code Pro', viewValue: 'Source Code Pro'},
+    {value: 'Bebas Neue', viewValue: 'Bebas Neue'},
+    {value: 'Helvetica', viewValue: 'Helvetica'},
+    {value: 'Sans-Serif', viewValue: 'Sans-Serif'}
+  ];
+
   constructor(private formBuilder: FormBuilder,
               private logosService: LogosService,
               private router: Router,
@@ -44,7 +53,7 @@ export class EditLogoComponent implements AfterViewInit {
       }),
       text: this.formBuilder.group({
         text: [this.logo && this.logo.text.text || '', Validators.required],
-        font: [this.logo && this.logo.text.font || '', Validators.required],
+        font: [this.logo && this.logo.text.font || 'Helvetica', Validators.required],
         size: [this.logo && this.logo.text.size || 36, Validators.required],
         color: [this.logo && this.logo.text.color || '', Validators.required]
       })

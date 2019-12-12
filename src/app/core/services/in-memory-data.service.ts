@@ -16,7 +16,7 @@ export class InMemoryDataService extends InMemoryDbService {
       text:
         {
           text: 'Red square',
-          font: 'Helvatica',
+          font: 'Helvetica',
           size: 36,
           color: '#1d3662'
         },
@@ -31,11 +31,26 @@ export class InMemoryDataService extends InMemoryDbService {
         text:
           {
             text: 'Japan',
-            font: 'Helvatica',
+            font: 'Helvetica',
             size: 36,
             color: '#1d621d'
           },
         id: 40119837
+      },
+      {
+        figure:
+          {
+            type: 'triangle',
+            color: '#00ff00'
+          },
+        text:
+          {
+            text: 'Green triangle',
+            font: 'Helvetica',
+            size: 24,
+            color: '#1d621d'
+          },
+        id: 40985837
       },
       {
         figure:
@@ -46,26 +61,11 @@ export class InMemoryDataService extends InMemoryDbService {
         text:
           {
             text: 'Japan',
-            font: 'Helvatica',
+            font: 'Helvetica',
             size: 36,
             color: '#1d621d'
           },
-        id: 40119837
-      },
-      {
-        figure:
-          {
-            type: 'circle',
-            color: '#ec0000'
-          },
-        text:
-          {
-            text: 'Japan',
-            font: 'Helvatica',
-            size: 36,
-            color: '#1d621d'
-          },
-        id: 40119837
+        id: 40716837
       }
     ];
 

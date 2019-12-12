@@ -1,11 +1,15 @@
 import {ElementRef, Injectable} from '@angular/core';
 import {FigureModel} from '../models/figure-model';
 import {TextModel} from '../models/text-model';
+import {FontsService} from './fonts.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DrawFigureService {
+  constructor(private fontService: FontsService) {
+  }
+
   drawFigure(canvas: ElementRef, context: CanvasRenderingContext2D, formState: FigureModel): void {
     context.clearRect(0, 0, 500, 150);
 
@@ -43,11 +47,14 @@ export class DrawFigureService {
   }
 
   drawText(canvas: ElementRef, context: CanvasRenderingContext2D, textConf: TextModel) {
-    context.clearRect(0, 150, 500, 400);
+    this.fontService.load(textConf.font);
+    this.fontService.getStatus().subscribe(() => {
+      context.clearRect(0, 150, 500, 400);
 
-    context.fillStyle = textConf.color;
-    context.textAlign = 'center';
-    context.font = `${textConf.size}px serif`;
-    context.fillText(textConf.text, 200, 200);
+      context.fillStyle = textConf.color;
+      context.textAlign = 'center';
+      context.font = `${textConf.size}px ${textConf.font}`;
+      context.fillText(textConf.text, 200, 200);
+    });
   }
 }
