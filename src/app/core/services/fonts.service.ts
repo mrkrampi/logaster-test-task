@@ -23,8 +23,9 @@ export class FontsService {
           this.subject.next(null);
         }
       });
+    } else {
+      this.subject.next(null);
     }
-    this.subject.next(null);
   }
 
   getStatus(): Observable<any> {
